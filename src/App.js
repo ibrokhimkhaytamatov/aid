@@ -6,6 +6,9 @@ import About from './pages/about/about';
 import MainLayout from './pages/layout/mainlayout';
 import Mutaxasislar from './pages/mutaxasislar/page';
 import Singlepage from './pages/singlepage/singlepage';
+import Contact from './pages/contact/contact';
+import AuthLayout from './pages/layout/auth';
+import Login from './pages/login/login';
 
 function App() {
 
@@ -16,7 +19,11 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/mutaxasislar' element={<Mutaxasislar/>}/>
       <Route path='/about' element={<About/>}/>
-      <Route path='/singlepage' element={<Singlepage/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      {/* <Route path='/singlepage' element={<Singlepage/>}/> */}
+      </Route>
+      <Route element={<AuthLayout/>}>
+        <Route path='/login' element={<Login/>}/>
       </Route>
     </Routes>
     </BrowserRouter>

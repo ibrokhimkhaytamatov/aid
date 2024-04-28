@@ -1,14 +1,36 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './home.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Form from '../../components/form'
+import api from '../../api/api'
 
 
 const Home = () => {
+  async function getUser() {
+    const endPoint = `user-list/`
+    try {
+      const response = await api.get(endPoint)
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getUser()
+  },[])
+
+
 
   const navigate = useNavigate()
   const location = () => {
     navigate('/mutaxasislar')
   }
+  const topUser = () => {
+    navigate('/mutaxasislar')
+  }
+
+ 
 
   return (
     <>
@@ -42,35 +64,41 @@ const Home = () => {
           </div>
         </div>
 
+        <h1 className='my-5 text-center'>Eng mashxurlar</h1>
+
         <div className="description d-flex mt-4 justify-content-between">
           <div class="card" style={{ width: 350 }}>
-            <img src="https://picsum.photos/300/300" class="card-img-top" alt="..." />
+            <img style={{height:'300px'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO6f0soF6hGzocuY7mhUxSc2rf-frpvR428q_bYyHhzXHEpco5XVzZJN279Xu0dNeA2W0&usqp=CAU" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Dilshod</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" onClick={topUser} class="btn btn-primary">Batafsil</a>
             </div>
           </div>
 
           <div class="card" style={{ width: 350 }} >
-            <img src="https://picsum.photos/300/300" class="card-img-top" alt="..." />
+            <img style={{height:'300px'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFHC1uSrod9T-5ckANUSay1KqPyvqukGVZw&s" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Xolmatjon</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" onClick={topUser} class="btn btn-primary">Batafsil</a>
             </div>
           </div>
           <div class="card" style={{ width: 350 }} >
-            <img src="https://picsum.photos/300/300" class="card-img-top" alt="..." />
+            <img style={{height:'300px'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePiptJlW7tDBn0pk2mxbHzmv5p3T9_8WAQg&s" class="card-img-top" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Sanjar</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" onClick={topUser} class="btn btn-primary">Batafsil</a>
             </div>
           </div>
         </div>
-        <button style={{ width: 100 }} className='btn btn-success mt-4 '>More</button>
+        <div className="d-flex justify-content-center mt-5">
+        <button  style={{ width: 200 }} className='btn btn-success mt-4 '>Ko'proq ko'rish</button>
+        </div>
+        
       </div>
+       
     </>
 
   )

@@ -10,7 +10,8 @@ const Navbar = () => {
       <Link to={'/'} style={{fontSize:30, color:'black'}}>Home</Link>
       <Link to={'/mutaxasislar'} style={{fontSize:30,  color:'black'}}>Mutaxasislar</Link>
       <Link to={'/about'} style={{fontSize:30,  color:'black'}}>About us</Link>
-      <Link to={'/singlepage'} style={{fontSize:30,  color:'black'}}>Single page</Link>
+      <Link to={'/contact'} style={{fontSize:30,  color:'black'}}>Contact</Link>
+      {/* <Link to={'/singlepage'} style={{fontSize:30,  color:'black'}}>Single page</Link> */}
       </div>
      
     </nav>

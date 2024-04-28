@@ -57,14 +57,15 @@ const Mutaxasislar = () => {
           <h1>Bizning mutaxasislar</h1>
           <div className="row ">
           {
-            users.map((i, key) => {
+            users.map((i, e) => {
               return (
-                  <div className=" col-md-4 justify-content-between">
-                    <div style={{height:'500px'}} className="card mt-2">
-                      <img style={{height:'350px'}} src={i.img} alt="" />
+                  <div key={e} className=" col-md-4 justify-content-between">
+                    <div style={{height:'550px'}} className="card mt-2">
+                      <img style={{height:'250px'}} src={i.img} alt="" />
                     <h3 className='p-2'>{i.name}</h3>
                     <h4 className='p-2'>{i.job}</h4>
                     <p className='p-2'>{i.description}</p>
+                    <button className='btn btn-success '>To'liq ma'lumot</button>
                     </div>
                     
                   </div>
